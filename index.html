@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Tariq Aziz | Academic Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1b4332; /* Elite Deep Green */
+            --secondary: #2d6a4f;
+            --accent: #d4af37; /* Royal Gold */
+            --light: #f4f7f6;
+            --white: #ffffff;
+            --text: #2d3436;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--light); line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center;
+            transition: 0.4s; background: transparent;
+        }
+        nav.scrolled { background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        nav.scrolled a { color: var(--primary) !important; }
+
+        .nav-logos { display: flex; gap: 15px; align-items: center; }
+        .nav-logos img { height: 50px; filter: brightness(0) invert(1); transition: 0.3s; }
+        nav.scrolled img { filter: none; }
+
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul li a { text-decoration: none; color: white; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('profile-hero.jpg');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; padding: 0 10%;
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 4.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; max-width: 800px; margin-bottom: 20px; opacity: 0.9; }
+
+        /* Section Layouts */
+        section { padding: 100px 10%; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary); margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; position: absolute; bottom: -10px; left: 0; width: 80px; height: 4px; background: var(--accent); }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-left: 5px solid var(--secondary); }
+        .card:hover { transform: translateY(-10px); }
+        .card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.1rem; }
+
+        /* Tables for Academic Info */
+        .table-container { overflow-x: auto; background: white; border-radius: 15px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { text-align: left; padding: 15px; border-bottom: 1px solid #eee; }
+        th { background: var(--primary); color: white; font-size: 0.85rem; text-transform: uppercase; }
+
+        /* Buttons */
+        .btn { padding: 12px 30px; background: var(--accent); color: var(--primary); text-decoration: none; border-radius: 50px; font-weight: 700; display: inline-block; transition: 0.3s; margin-top: 20px; }
+        .btn:hover { background: var(--primary); color: white; }
+
+        /* Publications List */
+        .pub-list { max-height: 500px; overflow-y: auto; padding-right: 15px; }
+        .pub-item { margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+
+        footer { background: var(--primary); color: white; padding: 60px 10%; text-align: center; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-logos">
+            <img src="uaf-logo.png" alt="UAF Logo">
+            <img src="ini-logo.png" alt="INI Logo">
+        </div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#academic">Academic</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1 data-aos="fade-up">Dr. Tariq Aziz</h1>
+        <p data-aos="fade-up" data-aos-delay="200">Regional Director (South Asia) INI | Associate Professor UAF</p>
+        <div data-aos="fade-up" data-aos-delay="400">
+            <a href="#contact" class="btn">Collaborate With Me</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title">Introduction</h2>
+        <div class="grid">
+            <div data-aos="fade-right">
+                <p>Dr. Aziz serves as the Regional Director for South Asia at the <strong>International Nitrogen Initiative (INI)</strong> and holds the position of Associate Professor of Soil Science at the <strong>University of Agriculture, Faisalabad (UAF)</strong>, Pakistan. He is the lead partner from Pakistan in the global project "South Asia Nitrogen Hub" and is also involved in the UNEP/GEF funded project “International Nitrogen Management Systems (INMS)”.</p>
+                <br>
+                <p>As a lead Editor, he has published “Nitrogen Assessment: Pakistan as a case study”. Dr. Aziz has published more than 120 research articles and produced over 40 M.Sc. and 5 Ph.D. students. His research interests focus on improving fertilizer use efficiency, nutrient recycling, and nutrient pollution.</p>
+            </div>
+            <div class="card" data-aos="fade-left">
+                <h3>Research Core</h3>
+                <ul>
+                    <li>Improving Fertilizer Use Efficiency</li>
+                    <li>Nutrient Recycling</li>
+                    <li>Mitigation of Nutrient Pollution</li>
+                    <li>Sustainable Nitrogen Management</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="academic" style="background: #eceff1;">
+        <h2 class="section-title">Academic & Distinctions</h2>
+        <div class="table-container" data-aos="zoom-in">
+            <table>
+                <thead>
+                    <tr><th>Degree/Certificate</th><th>Subject</th><th>Institution</th><th>Year</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>B.Sc. (Hons.)</td><td>Agriculture</td><td>UAF</td><td>1995-99</td></tr>
+                    <tr><td>M.Sc. (Hons.)</td><td>Soil Science</td><td>UAF</td><td>1999-01</td></tr>
+                    <tr><td>Ph.D.</td><td>Soil Science</td><td>UAF</td><td>2002-06</td></tr>
+                    <tr><td>Post Doc</td><td>Plant Physiology</td><td>University of Western Australia</td><td>2010-11</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="grid" style="margin-top: 40px;">
+            <div class="card" data-aos="fade-up">
+                <h3>Awards & Honors</h3>
+                <ul style="font-size: 0.9rem;">
+                    <li>🏆 Best Research Paper Award (HEC 2013-15)</li>
+                    <li>🔬 Research Productivity Award (PCST 2012-13)</li>
+                    <li>🇦🇺 Adjunct Faculty, U. of Western Australia (2011-17)</li>
+                    <li>🇩🇪 DAAD Visiting Scientist, Germany (2005)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="table-container" data-aos="fade-up">
+            <table>
+                <thead>
+                    <tr><th>Position</th><th>Organization</th><th>Duration</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Principal, Sub-Campus Depalpur</td><td>University of Agriculture, Faisalabad</td><td>2018 - 2023</td></tr>
+                    <tr><td>Project Director (HEC Projects)</td><td>UAF (Portfolio: Rs. 1300M)</td><td>2016 - 2022</td></tr>
+                    <tr><td>Associate Professor</td><td>UAF</td><td>2013 - Date</td></tr>
+                    <tr><td>Adjunct Senior Lecturer</td><td>University of Western Australia</td><td>2014 - Date</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="research" style="background: var(--primary); color: white;">
+        <h2 class="section-title" style="color: white;">Funded Projects</h2>
+        <div class="grid">
+            <div class="card" style="color: var(--text);" data-aos="flip-left">
+                <h3>South Asian Nitrogen Hub (UKRI-GCRF)</h3>
+                <p>Lead Partner (Pakistan). Total Cost: £19.6 Million. Pak Share: Rs. 100 Million (2019-23).</p>
+            </div>
+            <div class="card" style="color: var(--text);" data-aos="flip-left" data-aos-delay="100">
+                <h3>Engro Fertilizers Consultancy</h3>
+                <p>Forecasting urea demand for the future 2 decades. Project Worth: Rs. 3.0 Million.</p>
+            </div>
+            <div class="card" style="color: var(--text);" data-aos="flip-left" data-aos-delay="200">
+                <h3>HEC Bio-Nano Fertilizers</h3>
+                <p>PI for microbially synthesized nano-fertilizers project. Rs. 3.65 Million.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <h2 class="section-title">Scientific Publications</h2>
+        <div class="grid">
+            <div class="card" data-aos="fade-right">
+                <h3>Featured Books</h3>
+                <p><strong>Nitrogen Assessment: Pakistan as a Case Study (2021)</strong> - Elsevier Academic Press, USA.</p>
+                <p><strong>Pakistan Nitrogen Policy Report (2024)</strong> - SANH Policy Paper.</p>
+            </div>
+            <div class="card" data-aos="fade-left">
+                <h3>Impact Journals (Highlights)</h3>
+                <div class="pub-list">
+                    <div class="pub-item"><strong>Journal of Soil Science (2025):</strong> Tillage depth and Nitrogen Use Efficiency.</div>
+                    <div class="pub-item"><strong>Nature Ecology & Evolution (2023):</strong> Nutrient and pesticide pollution indicators.</div>
+                    <div class="pub-item"><strong>Science Reports (Nature, 2020):</strong> Rice phosphorus allocation patterns.</div>
+                    <div class="pub-item"><strong>Science Total Environment (2020):</strong> Chinese Mollisol profile distribution.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact & Professional Links</h2>
+        <div class="grid">
+            <div class="card" data-aos="zoom-in">
+                <h3>Office Information</h3>
+                <p>Institute of Soil & Environmental Sciences<br>University of Agriculture, Faisalabad</p>
+                <p><strong>Email:</strong> <a href="mailto:draziz@uaf.edu.pk">draziz@uaf.edu.pk</a></p>
+            </div>
+            <div class="card" data-aos="zoom-in" data-aos-delay="200">
+                <h3>Quick Shortcuts</h3>
+                <a href="https://orcid.org/0000-0002-4300-3813" target="_blank" class="btn">ORCID Profile</a>
+                <a href="https://www.linkedin.com/in/tariq-aziz-44b95024/" target="_blank" class="btn">LinkedIn</a>
+                <a href="https://initrogen.org/content/tariq-aziz" target="_blank" class="btn">INI Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Dr. Tariq Aziz | Regional Director INI & Associate Professor UAF</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Sticky Navbar Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
